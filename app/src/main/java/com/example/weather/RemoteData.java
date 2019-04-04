@@ -1,8 +1,6 @@
 package com.example.weather;
 
 import android.content.Context;
-import android.util.Log;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -21,16 +19,15 @@ public class RemoteData {
 
             //"http://api.openweathermap.org/data/2.5/weather?q=London";
 
-            "http://api.openweathermap.org/data/2.5/weather?q=London&appid=48512873de7e9ca06cf3ddbe456eea3a&units=metric";
+            "http://api.openweathermap.org/data/2.5/weather?&appid=48512873de7e9ca06cf3ddbe456eea3a&units=metric&q=";
 
-    public static JSONObject getJSON(Context context){
+    //get data from openweather.org
+    public static JSONObject getJSON(Context context, String city){
         try {
-            URL url = new URL(String.format(OPEN_WEATHER_MAP_API));
+            URL url = new URL(String.format(OPEN_WEATHER_MAP_API + city));
             HttpURLConnection connection =
                     (HttpURLConnection)url.openConnection();
 
-            //connection.addRequestProperty("x-api-key",
-              //      context.getString(R.string.open_weather_maps_app_id));
 
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));

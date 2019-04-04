@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.container, new WeatherFragment())
                     .commit();
 
-            updateWeatherData();
+            updateWeatherData("Ufa");
 
         }
 
@@ -46,12 +46,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-  //  private void updateWeatherData(final String city){
+    private void updateWeatherData(final String city){
 
-    private void updateWeatherData(){
         new Thread(){
             public void run(){
-                final JSONObject json = RemoteData.getJSON(getApplicationContext());
+                final JSONObject json = RemoteData.getJSON(getApplicationContext(),city);
                 if(json == null){
                     handler.post(new Runnable(){
                         public void run(){
@@ -71,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
+    //selected data from get json
     private void renderWeather(JSONObject json){
         try {
             String country = json.get("name").toString();
@@ -88,4 +88,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // updated view. selected city from fragmentDialog
+    public void onUserSelectValue(int which) {
+
+        switch (which) {
+            case 0:
+                updateWeatherData("London");
+                break;
+            case 1:
+                updateWeatherData("Paris");
+                break;
+            case 2:
+                updateWeatherData("Tokyo");
+                break;
+
+            case 3:
+                updateWeatherData("New York");
+                break;
+            default:
+                break;
+            }
+    }
 }

@@ -19,9 +19,9 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
                 .setItems(R.array.cities_array, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-                        Toast.makeText(getActivity(),
-                                which,
-                                Toast.LENGTH_SHORT).show();
+                        MainActivity callingActivity = (MainActivity) getActivity();
+                        callingActivity.onUserSelectValue(which);
+                        dialog.dismiss();
                         // The 'which' argument contains the index position
                         // of the selected item
                     }
