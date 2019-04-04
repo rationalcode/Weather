@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="open_weather_maps_app_id">11111</string>
+    <string name="place_not_found">Город не найден</string>
+    <string name="city">TextView</string>
+    <string name="select_city">Выберите город</string>
+</resources>
