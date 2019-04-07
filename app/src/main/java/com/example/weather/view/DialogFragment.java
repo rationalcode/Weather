@@ -1,4 +1,4 @@
-package com.example.weather;
+package com.example.weather.view;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
+
+import com.example.weather.MainActivity;
+import com.example.weather.R;
 
 public class DialogFragment extends android.support.v4.app.DialogFragment {
 

@@ -1,6 +1,9 @@
-package com.example.weather;
+package com.example.weather.model;
 
 import android.content.Context;
+
+import com.example.weather.presenter.IPresenter;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -29,14 +32,14 @@ public class RemoteData {
                     (HttpURLConnection)url.openConnection();
 
 
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
+                        BufferedReader reader = new BufferedReader(
+                                new InputStreamReader(connection.getInputStream()));
 
-            StringBuffer json = new StringBuffer(1024);
-            String tmp;
-            while((tmp=reader.readLine())!=null)
-                json.append(tmp).append("\n");
-            reader.close();
+                        StringBuffer json = new StringBuffer(1024);
+                        String tmp;
+                        while((tmp=reader.readLine())!=null)
+                            json.append(tmp).append("\n");
+                        reader.close();
 
             JSONObject data = new JSONObject(json.toString());
 

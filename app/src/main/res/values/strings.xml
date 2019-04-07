@@ -7,4 +7,8 @@
     <string name="place_not_found">Город не найден</string>
     <string name="city">TextView</string>
     <string name="select_city">Выберите город</string>
+    <string name="service_not_available">Сервис не доступен</string>
+    <string name="invalid_lat_long_used">Неверные параметры</string>
+    <string name="address_found">Адрес найден</string>
+    <string name="no_address_found">Адрес не найден</string>
 </resources>

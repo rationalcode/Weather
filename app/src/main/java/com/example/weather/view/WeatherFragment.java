@@ -1,4 +1,4 @@
-package com.example.weather;
+package com.example.weather.view;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,11 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.weather.R;
+import com.example.weather.view.DialogFragment;
+
 public class WeatherFragment extends Fragment implements View.OnClickListener {
 
 
-    static TextView city;
-    static TextView currentTemperature;
+    public TextView city;
+    public TextView currentTemperature;
     FloatingActionButton fab;
 
 
